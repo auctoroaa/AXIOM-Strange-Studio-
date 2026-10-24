@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strangestudio.ai/schemas/agent-mind.schema.json",
+  "title": "AgentMind",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "core"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "core": {
+      "type": "object",
+      "properties": {
+        "goalEngine": {
+          "type": "string"
+        },
+        "planner": {
+          "type": "string"
+        },
+        "reasoner": {
+          "type": "string"
+        },
+        "reflectionEngine": {
+          "type": "string"
+        },
+        "validationEngine": {
+          "type": "string"
+        }
+      }
+    },
+    "memoryConstellation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "toolGalaxy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verificationRing": {
+      "type": "object"
+    },
+    "deliveryLayer": {
+      "type": "object"
+    }
+  }
+}

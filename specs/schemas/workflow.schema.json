@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strangestudio.ai/schemas/workflow.schema.json",
+  "title": "Workflow",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "steps"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "blueprint": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/workflowStep"
+      }
+    },
+    "state": {
+      "$ref": "./state.schema.json"
+    }
+  },
+  "$defs": {
+    "workflowStep": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "station"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "builder": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "state": {
+          "$ref": "./state.schema.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strangestudio.ai/schemas/concept.schema.json",
+  "title": "Concept",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "purpose",
+    "observable",
+    "truth",
+    "states"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "object",
+        "district",
+        "system",
+        "workflow",
+        "agent",
+        "infrastructure",
+        "knowledge"
+      ]
+    },
+    "technicalConcept": {
+      "type": "string"
+    },
+    "observable": {
+      "type": "object",
+      "properties": {
+        "metaphor": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        },
+        "representation": {
+          "type": "string"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth": {
+      "$ref": "./truth.schema.json"
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "$ref": "./state.schema.json"
+      }
+    },
+    "visual": {
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "type": "string"
+        },
+        "material": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "motion": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

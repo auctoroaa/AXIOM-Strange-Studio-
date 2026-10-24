@@ -1,14 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Strange Studio Builder",
+  "$id": "https://strangestudio.ai/schemas/builder.schema.json",
+  "title": "Builder",
   "type": "object",
-  "additionalProperties": false,
   "required": [
     "id",
     "name",
-    "kind",
-    "state",
-    "source"
+    "role",
+    "state"
   ],
   "properties": {
     "id": {
@@ -17,38 +16,40 @@
     "name": {
       "type": "string"
     },
-    "kind": {
+    "role": {
       "enum": [
-        "human",
-        "agent",
-        "service",
-        "simulated"
+        "research",
+        "design",
+        "coding",
+        "reasoning",
+        "verification",
+        "delivery",
+        "orchestration"
       ]
     },
-    "state": {
-      "enum": [
-        "ready",
-        "working",
-        "waiting",
-        "blocked",
-        "failed",
-        "retrying",
-        "complete",
-        "unknown",
-        "simulated"
-      ]
+    "brain": {
+      "type": "string"
     },
-    "source": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "dependencies": {
+    "toolbox": {
       "type": "array",
       "items": {
         "type": "string"
       }
+    },
+    "currentBlueprint": {
+      "type": "string"
+    },
+    "state": {
+      "$ref": "./state.schema.json"
+    },
+    "memoryLinks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "location": {
+      "type": "string"
     }
   }
 }

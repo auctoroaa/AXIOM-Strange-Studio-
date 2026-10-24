@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strangestudio.ai/schemas/concept-engine.schema.json",
+  "title": "ConceptGenerationPipeline",
+  "type": "object",
+  "required": [
+    "seed",
+    "meaning",
+    "humanModel",
+    "observable",
+    "truth",
+    "causality"
+  ],
+  "properties": {
+    "seed": {
+      "type": "string"
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "functions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "humanModel": {
+      "type": "string"
+    },
+    "observable": {
+      "type": "string"
+    },
+    "spatialRepresentation": {
+      "type": "string"
+    },
+    "truth": {
+      "$ref": "./truth.schema.json"
+    },
+    "causality": {
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "dependency": {
+          "type": "string"
+        },
+        "outcome": {
+          "type": "string"
+        }
+      }
+    },
+    "worldPlacement": {
+      "type": "string"
+    }
+  }
+}

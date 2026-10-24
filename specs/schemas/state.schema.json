@@ -1,52 +1,54 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "State Transition",
+  "$id": "https://strangestudio.ai/schemas/state.schema.json",
+  "title": "State",
   "type": "object",
-  "additionalProperties": false,
   "required": [
-    "entityId",
-    "from",
-    "to",
-    "trigger",
-    "occurredAt",
-    "source"
+    "name",
+    "visual"
   ],
   "properties": {
-    "entityId": {
-      "type": "string"
-    },
-    "from": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "to": {
+    "name": {
       "enum": [
         "ready",
-        "working",
+        "active",
         "waiting",
         "blocked",
-        "failed",
         "retrying",
+        "failed",
         "complete",
+        "simulated",
         "unknown",
-        "simulated"
+        "low_confidence"
       ]
     },
-    "trigger": {
-      "type": "string",
-      "minLength": 2
-    },
-    "occurredAt": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "source": {
+    "description": {
       "type": "string"
     },
-    "eventId": {
-      "type": "string"
+    "visual": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "animation": {
+          "type": "string"
+        },
+        "pattern": {
+          "type": "string"
+        }
+      }
+    },
+    "truthLevel": {
+      "enum": [
+        "verified",
+        "probable",
+        "unverified",
+        "simulated"
+      ]
     }
   }
 }
