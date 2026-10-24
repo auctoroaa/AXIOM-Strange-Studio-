@@ -1,0 +1,9 @@
+{
+  "status": "proposed",
+  "unit": "px",
+  "scale": [],
+  "rules": [
+    "Use consistent tokens",
+    "Avoid fixed-width layouts that fail on mobile"
+  ]
+}

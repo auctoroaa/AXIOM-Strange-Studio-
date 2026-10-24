@@ -1,0 +1,8 @@
+%% Proposed diagram; reconcile with implementation before treating as authoritative.
+flowchart TD
+ E[Source Events] --> N[Normalize and Validate]
+ N --> S[Canonical State]
+ S --> O[Observatory Views]
+ N --> H[Event History]
+ S --> T[Truth and Provenance]
+ S --> C[Causal Links]

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Truth Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim",
+    "classification",
+    "verification",
+    "sources"
+  ],
+  "properties": {
+    "claim": {
+      "type": "string",
+      "minLength": 3
+    },
+    "classification": {
+      "enum": [
+        "fact",
+        "assumption",
+        "prediction",
+        "simulation",
+        "unknown"
+      ]
+    },
+    "verification": {
+      "enum": [
+        "unverified",
+        "pending",
+        "passed",
+        "failed",
+        "not-applicable"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "owner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prompt-spec version="1.0" status="proposed">
+  <name>Architecture Generation</name>
+  <purpose>Guide architecture generation outputs using Strange Studio design principles.</purpose>
+  <invariants><rule>Distinguish facts, assumptions, predictions, simulations, and unknowns.</rule><rule>Never claim implementation or verification without evidence.</rule><rule>Expose purpose, dependencies, states, failure modes, and acceptance criteria.</rule></invariants>
+  <input-contract>Include the request, constraints, existing concepts, and available evidence.</input-contract>
+  <output-contract>Return a structured proposal, unresolved questions, validation notes, and status.</output-contract>
+  <review-gate>Human review and applicable automated checks are required before canonical publication.</review-gate>
+</prompt-spec>

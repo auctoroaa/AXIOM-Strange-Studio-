@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Strange Studio Builder",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "kind",
+    "state",
+    "source"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "human",
+        "agent",
+        "service",
+        "simulated"
+      ]
+    },
+    "state": {
+      "enum": [
+        "ready",
+        "working",
+        "waiting",
+        "blocked",
+        "failed",
+        "retrying",
+        "complete",
+        "unknown",
+        "simulated"
+      ]
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

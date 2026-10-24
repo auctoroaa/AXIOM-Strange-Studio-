@@ -1,0 +1,8 @@
+{
+  "status": "proposed",
+  "levels": [],
+  "rules": [
+    "Preserve contrast",
+    "Depth must not be the only hierarchy signal"
+  ]
+}

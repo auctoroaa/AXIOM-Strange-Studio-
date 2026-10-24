@@ -45,12 +45,24 @@ npm run build
 
 The GitHub Actions workflow runs these checks on pushes and pull requests. A configured workflow is not proof that a run has passed; check the Actions tab for actual results.
 
+## Canonical design corpus
+
+The repository is organized into numbered design domains under `docs/`, technical contracts under `specs/`, reusable visual tokens under `design-system/`, application areas under `app/`, and engine boundaries under `packages/`. This is a scaffolded architecture corpus: many documents define intended responsibilities, not completed runtime functionality.
+
+- [Strange Studio Bible](bible/strange-studio-bible-v1.md)
+- [CGE v1.0 pipeline](docs/concept-generation-engine.md)
+- [CGE domain index](docs/05-CONCEPT-ENGINE/generation-pipeline.md)
+- [OIOS architecture specification](specs/architecture/OIOS-architecture.md)
+- [World laws](docs/02-WORLD/world-laws.md)
+
 ## Repository map
 
 ```text
 .
 ├── .github/workflows/ci.yml
 ├── docs/
+│   ├── 00-VISION/ … 20-FUTURE/ (numbered design domains)
+│   ├── concept-generation-engine.md
 │   ├── architecture.md
 │   ├── concept-generation-engine.md
 │   ├── truth-and-verification.md
@@ -58,6 +70,16 @@ The GitHub Actions workflow runs these checks on pushes and pull requests. A con
 │   └── roadmap.md
 ├── schemas/
 │   └── concept.schema.json
+├── bible/
+├── design-system/
+├── app/
+├── packages/
+├── prompts/
+├── research/
+├── specs/
+│   ├── architecture/
+│   ├── diagrams/
+│   └── schemas/
 ├── src/
 │   ├── domain/
 │   │   └── demo-state.ts

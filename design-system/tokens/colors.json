@@ -1,0 +1,16 @@
+{
+  "status": "proposed",
+  "semantic": {
+    "background": null,
+    "surface": null,
+    "text": null,
+    "mutedText": null,
+    "border": null,
+    "success": null,
+    "warning": null,
+    "danger": null,
+    "info": null,
+    "simulation": null
+  },
+  "note": "Populate approved values only after contrast validation. Color alone must not encode truth."
+}

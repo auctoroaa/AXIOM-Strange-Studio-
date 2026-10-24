@@ -1,0 +1,10 @@
+{
+  "status": "proposed",
+  "durationsMs": {},
+  "easing": {},
+  "rules": [
+    "Live-state motion must be event-driven",
+    "Respect reduced motion",
+    "Never imply unverified progress"
+  ]
+}

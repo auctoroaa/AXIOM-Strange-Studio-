@@ -1,0 +1,14 @@
+{
+  "status": "proposed",
+  "fontFamilies": {
+    "display": [],
+    "body": [],
+    "mono": []
+  },
+  "typeScale": {},
+  "lineHeights": {},
+  "accessibility": {
+    "textScaling": "required",
+    "minimumBodySize": "to-be-decided"
+  }
+}

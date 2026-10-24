@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "State Transition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entityId",
+    "from",
+    "to",
+    "trigger",
+    "occurredAt",
+    "source"
+  ],
+  "properties": {
+    "entityId": {
+      "type": "string"
+    },
+    "from": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "to": {
+      "enum": [
+        "ready",
+        "working",
+        "waiting",
+        "blocked",
+        "failed",
+        "retrying",
+        "complete",
+        "unknown",
+        "simulated"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "minLength": 2
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string"
+    },
+    "eventId": {
+      "type": "string"
+    }
+  }
+}

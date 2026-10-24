@@ -1,0 +1,10 @@
+%% Proposed diagram; reconcile with implementation before treating as authoritative.
+flowchart TD
+ G[Goal] --> P[Planning]
+ P --> M[Memory Retrieval]
+ M --> T[Tool Selection]
+ T --> X[Execution]
+ X --> V[Verification]
+ V -->|pass| D[Delivery]
+ V -->|fail| R[Review and Retry]
+ R --> P

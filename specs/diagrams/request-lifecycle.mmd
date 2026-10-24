@@ -1,0 +1,10 @@
+%% Proposed diagram; reconcile with implementation before treating as authoritative.
+flowchart LR
+ U[Request] --> P[Planning]
+ P --> R[Research]
+ R --> X[Execution]
+ X --> V[Verification]
+ V -->|pass| A[Approval if required]
+ A --> D[Delivery]
+ V -->|fail| F[Failure Record]
+ F --> P
