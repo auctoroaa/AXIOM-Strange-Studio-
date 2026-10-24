@@ -9,40 +9,48 @@ This roadmap separates the current prototype from future engineering work. Items
 - [x] Add frontend prototype and automated CI definition.
 - [ ] Confirm CI checks pass on GitHub.
 
-## Milestone 1: Observable Core
+## Milestone 1: Concept Generation Foundation
+- [x] Specify the CGE v1.0 pipeline and stage responsibilities.
+- [x] Define a versioned JSON Schema for concept records.
+- [ ] Add automated schema validation and fixture tests.
+- [ ] Implement deterministic verification-gate evaluation.
+- [ ] Add a versioned concept library with revision history.
+- [ ] Add explicit review and publish-to-universe controls.
+
+## Milestone 2: Observable Core
 - [ ] Define versioned domain entities and event contracts.
 - [ ] Implement a canonical state reducer with deterministic transitions.
 - [ ] Validate incoming events and reject invalid transitions.
 - [ ] Add workflow history and correlation IDs.
 - [ ] Test retries, failures, cancellation, and unknown state.
 
-## Milestone 2: Live Observatory
+## Milestone 3: Live Observatory
 - [ ] Replace local demo fixtures with a typed API contract.
 - [ ] Add event ingestion and reconnection behavior.
 - [ ] Show source and timestamp for every live metric.
 - [ ] Distinguish no data, stale data, unavailable source, and healthy source.
 - [ ] Add end-to-end tests for real state updates.
 
-## Milestone 3: Truth and Causality
+## Milestone 4: Truth and Causality
 - [ ] Implement evidence records and provenance links.
 - [ ] Add dependency graph and impact traversal.
 - [ ] Add fact/assumption/prediction/simulation classification.
 - [ ] Add inspectable confidence metadata without overstating calibration.
 
-## Milestone 4: Execution and Tool Gateway
+## Milestone 5: Execution and Tool Gateway
 - [ ] Implement policy-checked tool adapters.
 - [ ] Record inputs, outputs, versions, and failures.
 - [ ] Add cancellation, bounded retries, backoff, and idempotency.
 - [ ] Keep secrets server-side and redact sensitive payloads.
 
-## Milestone 5: Verification and Delivery
+## Milestone 6: Verification and Delivery
 - [ ] Define artifact-specific acceptance criteria.
 - [ ] Persist check results and link them to artifact versions.
 - [ ] Implement Approved / Rejected / Blocked delivery decisions.
 - [ ] Add explicit approval gates where needed.
 - [ ] Test that failed or missing checks cannot reach delivery.
 
-## Milestone 6: Spatial views
+## Milestone 7: Spatial views
 - [ ] Add City, Mind, and Machine views over the same state model.
 - [ ] Build accessible 2D interaction before deciding whether 3D is useful.
 - [ ] Add reduced-motion and mobile navigation support.

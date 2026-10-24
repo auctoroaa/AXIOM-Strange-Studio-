@@ -70,7 +70,11 @@ A production event should include at minimum:
 
 Do not treat browser animation callbacks as system events. The runtime is the authority for execution state.
 
-## 7. Proposed stack
+## 7. Concept Generation Engine
+
+The Concept Generation Engine (CGE) defines the proposed pipeline for turning seeds into reviewable, observable concepts. Its 14 stages, six verification gates, lifecycle, and concept record are specified in [Concept Generation Engine v1.0](concept-generation-engine.md). The JSON Schema at `schemas/concept.schema.json` defines the record's structural contract. These are design artifacts; an automated CGE runtime and deploy-to-universe service are not yet established as implemented.
+
+## 8. Proposed stack
 
 - Frontend: React, TypeScript, Vite for the initial prototype.
 - Visualization: CSS/SVG initially; add Three.js / React Three Fiber only when 3D improves comprehension.
@@ -81,7 +85,7 @@ Do not treat browser animation callbacks as system events. The runtime is the au
 
 This is a direction, not a claim that these services are already present.
 
-## 8. Architectural invariants
+## 9. Architectural invariants
 
 1. One canonical state model feeds every view.
 2. Every displayed state has provenance.

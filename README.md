@@ -52,9 +52,12 @@ The GitHub Actions workflow runs these checks on pushes and pull requests. A con
 ├── .github/workflows/ci.yml
 ├── docs/
 │   ├── architecture.md
+│   ├── concept-generation-engine.md
 │   ├── truth-and-verification.md
 │   ├── visual-system.md
 │   └── roadmap.md
+├── schemas/
+│   └── concept.schema.json
 ├── src/
 │   ├── domain/
 │   │   └── demo-state.ts
@@ -90,7 +93,7 @@ The GitHub Actions workflow runs these checks on pushes and pull requests. A con
                      DELIVERY HARBOR
 ```
 
-See [Architecture](docs/architecture.md), [Visual System](docs/visual-system.md), [Truth & Verification](docs/truth-and-verification.md), and [Roadmap](docs/roadmap.md).
+See [Architecture](docs/architecture.md), [Concept Generation Engine v1.0](docs/concept-generation-engine.md), [Concept Record Schema](schemas/concept.schema.json), [Visual System](docs/visual-system.md), [Truth & Verification](docs/truth-and-verification.md), and [Roadmap](docs/roadmap.md).
 
 ## Non-goals of this prototype
 
