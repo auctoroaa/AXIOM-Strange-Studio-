@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{projectWorkflow}from"./projector";it("preserves canonical state in projection",()=>expect(projectWorkflow({id:"w",name:"Migration",state:"ready",requiredCapabilities:[],dependencies:[]}).sourceState).toBe("ready"));
