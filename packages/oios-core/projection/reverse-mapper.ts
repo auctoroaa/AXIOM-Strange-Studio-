@@ -1,0 +1,1 @@
+import type{Mapping}from"./mapper";export function reverseMap(primitive:string,key:string,m:readonly Mapping[]):string{const x=m.find(y=>y.primitive===primitive&&y.reverseKey===key&&y.preservesIdentity);if(!x)throw new Error(`No reversible projection for ${primitive}/${key}`);return x.metaphor}
