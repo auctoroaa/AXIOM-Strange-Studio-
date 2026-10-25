@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{progressionFromEvents}from"./progression-engine";it("counts success and verification events",()=>expect(progressionFromEvents([{type:"VerificationPassed",effect:{}},{type:"WorkflowStateChanged",effect:{to:"running"}},{type:"WorkflowStateChanged",effect:{to:"succeeded"}}])).toBe(2));
