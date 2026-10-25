@@ -1,0 +1,1 @@
+import type{WorkflowState}from"../domain/Workflow";export type QuestState=WorkflowState;export function questToWorkflowState(s:QuestState):WorkflowState{return s;}export function assertQuestWorkflowParity(q:QuestState,w:WorkflowState):void{if(q!==w)throw new Error(`CF07 quest state ${q} differs from workflow state ${w}`);}
