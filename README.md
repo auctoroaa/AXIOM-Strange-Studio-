@@ -1,28 +1,72 @@
-# Strange Studio
+# AXIOM Strange Studio
 
 **Observable Intelligence Operating System (OIOS)**  
 *See. Think. Build.*
 
-Strange Studio is an observability-first workspace for understanding how software systems, AI agents, workflows, tools, knowledge, and infrastructure behave. Its interface is designed to expose state, evidence, dependencies, and outcomes instead of simulating intelligence through decoration.
+Strange Studio is an observability-first workspace for understanding how software systems, AI agents, workflows, tools, knowledge, and infrastructure behave. The interface aims to expose state, evidence, dependencies, and outcomes rather than imply intelligence through decoration.
 
-> **Repository status:** The repository contains a frontend observability prototype and an initial executable OIOS core under `packages/oios-core/`: canonical JSON Schemas, validators, domain models, state machines, workflow and quest engines, civilization services, reversible projections, Architecture Packs, and a schema-validated local HTTP API. The frontend still uses explicitly labeled local demonstration data and is not yet wired to the new API. CI must pass before this core is classified as verified. The API currently stores workflows in process memory and is not a production-hardened service.
+## Repository status
+
+The active React/Vite dashboard lives in `apps/web/`. The executable OIOS core lives in `packages/oios-core/` and contains canonical schemas, validators, domain models, state machines, workflow and quest logic, reversible projections, architecture packs, and a local HTTP API.
+
+The dashboard checks whether the local API is reachable, but the event stream and truth panel still use explicitly labeled local fixture data. The API currently stores workflow state in process memory and is not a production-hardened service. Code being present is not proof that tests or CI pass; use the Actions results and local quality checks to establish verification.
+
+## Structure
+
+```text
+.
+├── apps/
+│   └── web/                 # Active React/Vite application
+│       ├── src/
+│       │   ├── app/
+│       │   ├── api/
+│       │   ├── domain/
+│       │   ├── styles/
+│       │   └── test/
+│       ├── index.html
+│       ├── package.json
+│       └── vite.config.ts
+├── packages/
+│   ├── oios-core/            # Canonical runtime, domain, schemas, validators, API
+│   ├── builder-engine/       # Planned/implemented status documented per package
+│   ├── causality-engine/
+│   ├── concept-engine/
+│   ├── memory-engine/
+│   ├── observability-engine/
+│   ├── truth-engine/
+│   ├── visualization-engine/
+│   ├── world-engine/
+│   └── shared/
+├── docs/
+│   ├── architecture/
+│   ├── legal/
+│   ├── concept-generation-engine.md
+│   ├── truth-and-verification.md
+│   ├── visual-system.md
+│   └── roadmap.md
+├── bible/
+├── design-system/
+├── specs/
+├── schemas/
+├── prompts/
+├── research/
+├── app/                     # Legacy compatibility note only
+├── src/                     # Legacy compatibility note only
+├── package.json             # Workspace and shared tooling
+├── tsconfig.json
+└── vitest.config.ts
+```
+
+Empty or documentation-only engine directories are placeholders until actual code is added. Their presence must not be described as implemented functionality.
 
 ## Design principles
 
 - **Truth over theater:** no fabricated progress or implied integrations.
-- **Events drive state:** visible activity must correspond to a recorded state transition.
+- **Events drive state:** visible activity should correspond to a recorded state transition.
 - **Evidence is inspectable:** distinguish facts, assumptions, predictions, and simulations.
 - **Causality is traceable:** expose dependencies, triggers, and outcomes.
 - **Verification gates delivery:** generation alone does not mean an output is verified.
 - **Unknown means unknown:** missing data is never silently presented as success.
-
-## Current capabilities
-
-- Responsive observability dashboard prototype.
-- Observable lifecycle overview: request, planning, research, tool use, execution, verification, delivery.
-- Separate truth classifications and system-health indicators.
-- Architecture and implementation-boundary documentation.
-- Automated CI workflow for type-checking, tests, and production build.
 
 ## Quick start
 
@@ -33,7 +77,11 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite.
+Run the API separately when needed:
+
+```bash
+npm run api:dev
+```
 
 ## Quality checks
 
@@ -43,109 +91,29 @@ npm test
 npm run build
 ```
 
-The GitHub Actions workflow runs these checks on pushes and pull requests. A configured workflow is not proof that a run has passed; check the Actions tab for actual results.
+CI is configured to run these checks on pushes and pull requests. A configured workflow is not evidence of a passing run.
 
-## Canonical design corpus
-
-The repository is organized into numbered design domains under `docs/`, technical contracts under `specs/`, reusable visual tokens under `design-system/`, application areas under `app/`, and engine boundaries under `packages/`. The broader documentation corpus includes intended responsibilities as well as implemented code. Treat each subsystem according to its recorded implementation and verification status.
+## Architecture and product corpus
 
 - [Strange Studio Bible](bible/strange-studio-bible-v1.md)
-- [CGE v1.0 pipeline](docs/concept-generation-engine.md)
-- [CGE domain index](docs/05-CONCEPT-ENGINE/generation-pipeline.md)
-- [OIOS architecture specification](specs/architecture/OIOS-architecture.md)
-- [World laws](docs/02-WORLD/world-laws.md)
-
-## Repository map
-
-```text
-.
-├── .github/workflows/ci.yml
-├── docs/
-│   ├── 00-VISION/ … 20-FUTURE/ (numbered design domains)
-│   ├── concept-generation-engine.md
-│   ├── architecture.md
-│   ├── concept-generation-engine.md
-│   ├── truth-and-verification.md
-│   ├── visual-system.md
-│   └── roadmap.md
-├── schemas/
-│   └── concept.schema.json
-├── bible/
-├── design-system/
-├── app/
-├── packages/
-├── prompts/
-├── research/
-├── specs/
-│   ├── architecture/
-│   ├── diagrams/
-│   └── schemas/
-├── src/
-│   ├── domain/
-│   │   └── demo-state.ts
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── styles.css
-├── index.html
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
-```
-
-## Architecture at a glance
-
-```text
-                    THE OBSERVATORY
-             Live activity + Truth system
-                           |
-                    INTELLIGENCE CORE
-                           |
-          +----------------+----------------+
-          |                |                |
-       MIND VIEW         CITY VIEW       MACHINE VIEW
- Memory / Reasoning   Library / Workshop  Models / APIs
-          |                |                |
-          +----------------+----------------+
-                           |
-                  WORKFLOW NETWORK
- Request → Plan → Research → Execute
-                           |
-                    Verification Gate
-                           |
-                     DELIVERY HARBOR
-```
-
-See [Architecture](docs/architecture.md), [Concept Generation Engine v1.0](docs/concept-generation-engine.md), [Concept Record Schema](schemas/concept.schema.json), [Visual System](docs/visual-system.md), [Truth & Verification](docs/truth-and-verification.md), and [Roadmap](docs/roadmap.md).
+- [OIOS Core README](packages/oios-core/README.md)
+- [Architecture overview](docs/architecture.md)
+- [Concept Generation Engine](docs/concept-generation-engine.md)
+- [Truth and Verification](docs/truth-and-verification.md)
+- [Visual System](docs/visual-system.md)
+- [Roadmap](docs/roadmap.md)
+- [Concept schema](schemas/concept.schema.json)
 
 ## Non-goals of this prototype
 
-This is not yet a production agent runtime, orchestration engine, persistent knowledge graph, model router, authentication system, or deployment service. Those integrations must be implemented and verified before the interface may claim to observe them.
-
-## Contributing
-
-Keep changes small, explicit, and testable. Document architectural decisions and label features as **implemented**, **proposed**, or **unverified**. Never claim a live integration without an actual connector, observable events, and tests.
-
-## Project identity
-
-- **Name:** Strange Studio
-- **System:** Observable Intelligence Operating System (OIOS)
-- **Tagline:** See. Think. Build.
-- **Primary rule:** The environment must explain the system, not conceal it.
-
+This is not yet a production agent runtime, persistent knowledge graph, model router, authentication system, or deployment service. These capabilities must be implemented and verified before the interface may claim to observe them.
 
 ## License and legal notices
 
-This repository currently uses a **proprietary, all-rights-reserved notice**.
-Public visibility does not grant reuse rights. Read [LICENSE](LICENSE) before
-copying or redistributing project-owned material.
+This repository currently uses a proprietary, all-rights-reserved notice. Public visibility does not grant reuse rights. Read [LICENSE](LICENSE) before copying or redistributing project-owned material.
 
 - [Legal, IP, and Claims Policy](docs/legal/LEGAL.md)
 - [Name and Trademark Notice](docs/legal/TRADEMARKS.md)
 - [Third-Party Notices and Audit Status](docs/legal/THIRD_PARTY_NOTICES.md)
 
-The project does not claim that its names are registered trademarks, that every
-architectural idea is exclusive or protectable, or that its dependency licenses
-have been fully audited. Third-party components retain their own terms. Current
-implementation and security limitations remain as described above. These notices
-are not a substitute for advice from qualified counsel in the relevant
-jurisdiction.
+Third-party components retain their own terms. The dependency-license audit is not yet complete. These notices are not a substitute for advice from qualified counsel in the relevant jurisdiction.
