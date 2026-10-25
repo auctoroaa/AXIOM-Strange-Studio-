@@ -1,0 +1,97 @@
+apiVersion: axiom.strange.studio/world-manifestation/v1
+kind: WorldManifestationRegistry
+status: specification-baseline
+principles:
+  canonicalSourceRequired: true
+  deterministicProjectionRequired: true
+  sourceTraceRequired: true
+  reversibleMappingRequired: true
+  lifecycleAware: true
+  projectionIsNotEvidence: true
+  projectionCannotCertify: true
+manifestationMappings:
+  - id: world.agent.builder-hut
+    source: OIOS.Agent
+    semanticRule: role=Builder
+    manifestation: BuilderHut
+    status: proposed
+    lifecycle: follow-agent-state
+  - id: world.agent.research-lodge
+    source: OIOS.Agent
+    semanticRule: role=Researcher
+    manifestation: ResearchLodge
+    status: proposed
+    lifecycle: follow-agent-state
+  - id: world.agent.inspection-office
+    source: OIOS.Agent
+    semanticRule: role=Verifier
+    manifestation: InspectionOffice
+    status: proposed
+    lifecycle: follow-verifier-state-and-evidence
+  - id: world.workflow.workshop
+    source: OIOS.Workflow
+    semanticRule: workflow-kind=production
+    manifestation: WorkshopOrFactory
+    status: proposed
+    lifecycle: follow-workflow-state-and-versioned-scale-rule
+  - id: world.event.beacon
+    source: OIOS.Event
+    semanticRule: event-classification
+    manifestation: BeaconTower
+    status: proposed
+    lifecycle: event-provenance-and-retention-policy
+  - id: world.knowledge.library
+    source: OIOS.Knowledge
+    semanticRule: versioned-record-count-threshold
+    manifestation: LibraryOrArchive
+    status: proposed
+    lifecycle: recalculate-on-record-change
+  - id: world.evidence.vault
+    source: OIOS.Verification
+    semanticRule: evidence-kind-and-provenance
+    manifestation: EvidenceVault
+    status: proposed
+    lifecycle: preserve-evidence-references-and-corrections
+  - id: world.trust.monument
+    source: AXIOM-AAA.Certificate
+    semanticRule: current-certificate-status
+    manifestation: TrustMonolith
+    status: proposed
+    lifecycle: revoke-and-expire-must-invalidate-current-certification-display
+  - id: world.relation.bridge
+    source: MKC.Relationship
+    semanticRule: relationship-type=Supports
+    manifestation: Bridge
+    status: proposed
+    lifecycle: update-when-source-or-relationship-changes
+  - id: world.relation.debate-hall
+    source: MKC.Relationship
+    semanticRule: relationship-type=Contradicts
+    manifestation: DebateHall
+    status: proposed
+    lifecycle: unresolved-until-authorized-evaluation
+  - id: world.relation.railway
+    source: MKC.Relationship
+    semanticRule: relationship-type=DependsOn
+    manifestation: SupplyRailway
+    status: proposed
+    lifecycle: missing-dependency-remains-visible
+  - id: world.unknown.explored-zone
+    source: OIOS.Unknown
+    semanticRule: unknown-kind
+    manifestation: UnexploredZone
+    status: proposed
+    lifecycle: retire-only-after-authoritative-resolution
+verificationRequirements:
+  - deterministic-output-for-identical-inputs-and-rule-versions
+  - source-object-and-event-traceability
+  - reversible-projection-round-trip
+  - state-and-symbol-color-consistency
+  - revoked-and-expired-trust-lifecycle
+  - unknown-preservation
+  - accessible-symbol-labels
+  - automated-tests-and-ci-evidence
+notes:
+  - "All mappings are proposals until accepted and implemented."
+  - "A world manifestation is a projection, never certification evidence by itself."
+  - "Only AXIOM-AAA may issue or revoke certification results."
