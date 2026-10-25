@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{generateQuests}from"./quest-generator";it("generates one quest per workflow",()=>expect(generateQuests([{id:"w",name:"Read",state:"pending",requiredCapabilities:[],dependencies:[]}])).toHaveLength(1));
