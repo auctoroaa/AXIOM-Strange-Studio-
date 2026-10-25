@@ -17,5 +17,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["apps/web/src", "packages/oios-core", "vite.config.ts", "apps/web/vite.config.ts"]
+  "include": ["apps/web/src", "packages/oios-core", "packages/architecture-engine", "vite.config.ts", "apps/web/vite.config.ts"]
 }
