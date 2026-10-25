@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{healthResponse}from"./health";it("exposes the canonical primitive set",()=>expect(healthResponse().canonicalPrimitives).toHaveLength(9));
