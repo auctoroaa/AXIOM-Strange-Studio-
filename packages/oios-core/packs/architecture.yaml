@@ -1,0 +1,13 @@
+version: "1.0.0"
+name: strange-studio-spatial
+teaches: "Represent spatial metaphors without changing canonical OIOS identity."
+required_primitives: [Agent, Workflow, Knowledge, Tool, Event, Verification, Context, Unknown, Delivery]
+mappings:
+  - metaphor: Builder
+    primitive: Agent
+    reverse_key: Builder
+    reversible: true
+  - metaphor: Lighthouse
+    primitive: Verification
+    reverse_key: Lighthouse
+    reversible: true
