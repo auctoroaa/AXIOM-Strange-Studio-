@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{calculateReward}from"./rewards-engine";it("blocks unverified reward",()=>expect(calculateReward({requiredVerificationPassed:false,progress:10,pointsPerStep:2})).toBe(0));it("awards verified progress",()=>expect(calculateReward({requiredVerificationPassed:true,progress:3,pointsPerStep:2})).toBe(6));
