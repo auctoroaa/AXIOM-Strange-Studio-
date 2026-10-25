@@ -1,0 +1,8 @@
+version: "1.0.0"
+districts:
+  - id: memory-city
+    purpose: preserve and retrieve source-backed Knowledge
+    required_resources: [source-records, concept-index]
+  - id: workshop-district
+    purpose: execute validated Workflows
+    required_resources: [agent-capabilities, tool-registry]
