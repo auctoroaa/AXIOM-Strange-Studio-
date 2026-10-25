@@ -5,7 +5,7 @@
 
 Strange Studio is an observability-first workspace for understanding how software systems, AI agents, workflows, tools, knowledge, and infrastructure behave. Its interface is designed to expose state, evidence, dependencies, and outcomes instead of simulating intelligence through decoration.
 
-> **Repository status:** The repository is being established from a minimal baseline. This commit introduces the architecture documentation and a frontend prototype. The current interface uses explicitly labeled local demonstration data. It does not connect to live AI agents, production models, external tools, or infrastructure.
+> **Repository status:** The repository contains a frontend observability prototype and an initial executable OIOS core under `packages/oios-core/`: canonical JSON Schemas, validators, domain models, state machines, workflow and quest engines, civilization services, reversible projections, Architecture Packs, and a schema-validated local HTTP API. The frontend still uses explicitly labeled local demonstration data and is not yet wired to the new API. CI must pass before this core is classified as verified. The API currently stores workflows in process memory and is not a production-hardened service.
 
 ## Design principles
 
@@ -47,7 +47,7 @@ The GitHub Actions workflow runs these checks on pushes and pull requests. A con
 
 ## Canonical design corpus
 
-The repository is organized into numbered design domains under `docs/`, technical contracts under `specs/`, reusable visual tokens under `design-system/`, application areas under `app/`, and engine boundaries under `packages/`. This is a scaffolded architecture corpus: many documents define intended responsibilities, not completed runtime functionality.
+The repository is organized into numbered design domains under `docs/`, technical contracts under `specs/`, reusable visual tokens under `design-system/`, application areas under `app/`, and engine boundaries under `packages/`. The broader documentation corpus includes intended responsibilities as well as implemented code. Treat each subsystem according to its recorded implementation and verification status.
 
 - [Strange Studio Bible](bible/strange-studio-bible-v1.md)
 - [CGE v1.0 pipeline](docs/concept-generation-engine.md)
