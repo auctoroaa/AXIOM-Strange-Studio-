@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{createEvent}from"./Event";const e={id:"e",type:"Changed",occurredAt:"2026-01-01T00:00:00Z",subjectId:"w",effect:{state:"ready"},truth:"implemented" as const};it("creates observable event",()=>expect(createEvent(e).effect.state).toBe("ready"));it("rejects empty effect",()=>expect(()=>createEvent({...e,effect:{}})).toThrow("observable effect"));
