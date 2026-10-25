@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{createContext}from"./Context";it("creates context",()=>expect(createContext({id:"c",items:[{key:"goal",value:"index",source:"user"}],budget:100}).budget).toBe(100));it("rejects zero budget",()=>expect(()=>createContext({id:"c",items:[],budget:0})).toThrow("budget"));
