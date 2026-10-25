@@ -2,7 +2,7 @@
   "name": "strange-studio",
   "private": true,
   "version": "0.1.0",
-  "description": "Strange Studio: Observable Intelligence Operating System",
+  "description": "Strange Studio OIOS with tested canonical domain and projection core",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -10,14 +10,17 @@
     "typecheck": "tsc -b --pretty",
     "test": "vitest run",
     "test:watch": "vitest",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "test:oios": "vitest run packages/oios-core"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "vite": "^6.0.7"
+    "vite": "^6.0.7",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
