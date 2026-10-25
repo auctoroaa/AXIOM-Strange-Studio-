@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{readyWorkflow}from"./orchestrator";it("returns workflow state and observable event",()=>{const r=readyWorkflow({id:"w",name:"Index",state:"pending",requiredCapabilities:[],dependencies:[]});expect(r.workflow.state).toBe("ready");expect(r.event.effect.to).toBe("ready")});
