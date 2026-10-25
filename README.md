@@ -131,3 +131,21 @@ Keep changes small, explicit, and testable. Document architectural decisions and
 - **System:** Observable Intelligence Operating System (OIOS)
 - **Tagline:** See. Think. Build.
 - **Primary rule:** The environment must explain the system, not conceal it.
+
+
+## License and legal notices
+
+This repository currently uses a **proprietary, all-rights-reserved notice**.
+Public visibility does not grant reuse rights. Read [LICENSE](LICENSE) before
+copying or redistributing project-owned material.
+
+- [Legal, IP, and Claims Policy](docs/legal/LEGAL.md)
+- [Name and Trademark Notice](docs/legal/TRADEMARKS.md)
+- [Third-Party Notices and Audit Status](docs/legal/THIRD_PARTY_NOTICES.md)
+
+The project does not claim that its names are registered trademarks, that every
+architectural idea is exclusive or protectable, or that its dependency licenses
+have been fully audited. Third-party components retain their own terms. Current
+implementation and security limitations remain as described above. These notices
+are not a substitute for advice from qualified counsel in the relevant
+jurisdiction.
