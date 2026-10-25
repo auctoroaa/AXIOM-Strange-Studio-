@@ -1,0 +1,12 @@
+version: "1.0.0"
+valid:
+  metaphor: Builder
+  primitive: Agent
+  reverse_key: Builder
+  reversible: true
+invalid:
+  metaphor: Coral
+  primitive: Coral
+  reverse_key: null
+  reversible: false
+expected_invalid_reason: "Metaphor must resolve to a canonical primitive and mapping must be reversible."
