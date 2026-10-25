@@ -1,0 +1,1 @@
+export type Tool=Readonly<{id:string;name:string;requiredCapabilities:readonly string[];allowedAgentIds:readonly string[]}>;export function canUseTool(a:{id:string;capabilities:readonly string[]},t:Tool):boolean{return(!t.allowedAgentIds.length||t.allowedAgentIds.includes(a.id))&&t.requiredCapabilities.every(c=>a.capabilities.includes(c));}
