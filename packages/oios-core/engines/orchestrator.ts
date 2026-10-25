@@ -1,0 +1,1 @@
+import type{Workflow}from"../domain/Workflow";import{transitionWorkflow}from"../state/workflow-state-machine";export function readyWorkflow(w:Workflow){const state=transitionWorkflow(w.state,"ready");return{workflow:{...w,state},event:{id:`evt-${w.id}-ready`,type:"WorkflowStateChanged",subjectId:w.id,effect:{from:w.state,to:state}}};}
