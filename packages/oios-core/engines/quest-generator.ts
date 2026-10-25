@@ -1,0 +1,1 @@
+import type{Workflow}from"../domain/Workflow";import{workflowToQuest}from"./workflow-mapper";export function generateQuests(w:readonly Workflow[]){return w.map(workflowToQuest)}
