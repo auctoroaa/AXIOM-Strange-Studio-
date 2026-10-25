@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{createAgent}from"./Agent";it("creates agent",()=>expect(createAgent({id:"a",name:"Indexer",capabilities:["ingest"],toolIds:[]}).name).toBe("Indexer"));it("rejects blank identity",()=>expect(()=>createAgent({id:" ",name:"x",capabilities:[],toolIds:[]})).toThrow("required"));
