@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://axiom-strange-studio.invalid/schemas/nucleotide-farm/specimen.schema.json",
+  "title": "Nucleotide Farm Specimen",
+  "description": "Proposed record contract for an identified experimental specimen. Schema presence is not runtime implementation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "specimenId",
+    "schemaVersion",
+    "createdAt",
+    "origin",
+    "lineage",
+    "classification",
+    "traits",
+    "provenance"
+  ],
+  "properties": {
+    "specimenId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "reference"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "generated",
+            "collected",
+            "mutated",
+            "crossbred",
+            "recovered"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "territory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parentSpecimenIds",
+        "generation"
+      ],
+      "properties": {
+        "parentSpecimenIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mutationIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "classification": {
+      "enum": [
+        "unidentified",
+        "observed",
+        "failed",
+        "promising",
+        "reproduced",
+        "verified",
+        "legendary-candidate",
+        "archived"
+      ]
+    },
+    "traits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "value",
+          "status"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {},
+          "status": {
+            "enum": [
+              "hypothesis",
+              "observed",
+              "measured",
+              "verified"
+            ]
+          },
+          "evidenceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceRevision",
+        "environment"
+      ],
+      "properties": {
+        "sourceRevision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seed": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "collectorRunId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "archivedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  }
+}
