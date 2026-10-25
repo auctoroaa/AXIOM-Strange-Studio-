@@ -1,0 +1,1 @@
+import type{Workflow}from"../domain/Workflow";export function projectWorkflow(w:Workflow){return{primitive:"Workflow"as const,id:w.id,label:w.name,state:w.state,sourceState:w.state}}
