@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{validateBuilding}from"./building-service";it("checks building resource requirements",()=>expect(validateBuilding({id:"b",districtId:"d",purpose:"archive",requiredResources:["disk"]},new Set())).toContain("Building b lacks resource disk"));
