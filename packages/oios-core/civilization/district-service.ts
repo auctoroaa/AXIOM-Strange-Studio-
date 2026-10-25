@@ -1,0 +1,1 @@
+export type District={id:string;requiredResources:string[];availableResources:string[]};export function validateDistrictAccess(d:District):string[]{return d.requiredResources.filter(r=>!d.availableResources.includes(r)).map(r=>`District ${d.id} lacks resource ${r}`)}
