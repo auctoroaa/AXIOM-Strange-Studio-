@@ -1,0 +1,72 @@
+apiVersion: axiom.strange.studio/traceability/v1
+kind: TraceabilityRegistry
+status: baseline
+entries:
+  - field: apiVersion
+    schema: "#/properties/apiVersion"
+    ruleId: APC-STRUCT-001
+    validator: schema-validator
+    evidence: schema-validation-result
+    required: true
+  - field: metadata.id
+    schema: "#/$defs/metadata/properties/id"
+    ruleId: APC-META-001
+    validator: schema-validator
+    evidence: schema-validation-result
+    required: true
+  - field: metadata.version
+    schema: "#/$defs/metadata/properties/version"
+    ruleId: APC-META-002
+    validator: schema-validator
+    evidence: schema-validation-result
+    required: true
+  - field: identity.system
+    schema: "#/$defs/identity/properties/system"
+    ruleId: APC-IDENTITY-001
+    validator: schema-validator
+    runtimeContract: contracts/oios-core/contract.json
+    evidence: schema-validation-result
+    required: true
+  - field: ontology.primitives
+    schema: "#/$defs/ontology/properties/primitives"
+    ruleId: APC-ONTO-001
+    validator: primitive-validator
+    runtimeContract: contracts/oios-core/contract.json
+    evidence: primitive-coverage-report
+    required: true
+  - field: reverseMappings
+    schema: "#/properties/reverseMappings"
+    ruleId: APC-PROJ-001
+    validator: reversibility-validator
+    runtimeContract: contracts/oios-core/contract.json
+    evidence: projection-round-trip-report
+    required: true
+  - field: workflowTemplates
+    schema: "#/properties/workflowTemplates"
+    ruleId: APC-WORKFLOW-001
+    validator: quest-workflow-validator
+    runtimeContract: contracts/workflow-engine/contract.json
+    evidence: workflow-graph-report
+    required: true
+  - field: events
+    schema: "#/properties/events"
+    ruleId: APC-EVENT-001
+    validator: event-observability-validator
+    runtimeContract: contracts/oios-core/contract.json
+    evidence: event-observability-report
+    required: true
+  - field: compatibility
+    schema: "#/properties/compatibility"
+    ruleId: APC-COMPAT-001
+    validator: compatibility-validator
+    evidence: runtime-contract-verification-report
+    required: true
+  - field: learningObjectives
+    schema: "#/properties/learningObjectives"
+    ruleId: APC-LEARN-001
+    validator: learnability-validator
+    evidence: learning-outcome-report
+    required: true
+notes:
+  - "Initial traceability baseline, not yet exhaustive for every manifest field."
+  - "Unmapped fields block certification unless explicitly exempted by trusted policy."

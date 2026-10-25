@@ -1,5 +1,5 @@
-# Shared Package
+# shared
 
-**Status: placeholder / scope to be defined.**
+Shared types and utilities only when genuinely cross-package. Do not place certification decisions, domain-specific policy or trust-key custody here.
 
-Place only genuinely shared, stable contracts and utilities here. Avoid turning this into a catch-all package.
+Status: boundary guidance added; implementation pending.
