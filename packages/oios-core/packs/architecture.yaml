@@ -7,7 +7,35 @@ mappings:
     primitive: Agent
     reverse_key: Builder
     reversible: true
+  - metaphor: Migration
+    primitive: Workflow
+    reverse_key: Migration
+    reversible: true
+  - metaphor: Coral
+    primitive: Knowledge
+    reverse_key: Coral
+    reversible: true
+  - metaphor: Signal
+    primitive: Event
+    reverse_key: Signal
+    reversible: true
+  - metaphor: Wrench
+    primitive: Tool
+    reverse_key: Wrench
+    reversible: true
+  - metaphor: Backpack
+    primitive: Context
+    reverse_key: Backpack
+    reversible: true
   - metaphor: Lighthouse
     primitive: Verification
     reverse_key: Lighthouse
+    reversible: true
+  - metaphor: DeliveryCart
+    primitive: Delivery
+    reverse_key: DeliveryCart
+    reversible: true
+  - metaphor: FogBank
+    primitive: Unknown
+    reverse_key: FogBank
     reversible: true
