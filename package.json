@@ -12,8 +12,8 @@
     "test:watch": "vitest",
     "preview": "vite preview --host 0.0.0.0",
     "test:oios": "vitest run packages/oios-core",
-    "api:dev": "tsx packages/oios-core/api/server.ts",
-    "api:start": "tsx packages/oios-core/api/server.ts"
+    "api:dev": "tsx packages/oios-core/api/start.ts",
+    "api:start": "tsx packages/oios-core/api/start.ts"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
