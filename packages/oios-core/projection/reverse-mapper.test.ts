@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{reverseMap}from"./reverse-mapper";it("reverses a projection",()=>expect(reverseMap("Agent","Whale",[{metaphor:"Whale",primitive:"Agent",reverseKey:"Whale",preservesIdentity:true}])).toBe("Whale"));it("rejects missing key",()=>expect(()=>reverseMap("Agent","x",[])).toThrow("No reversible"));
