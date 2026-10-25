@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{transitionWorkflow}from"./workflow-state-machine";it("allows pending to ready",()=>expect(transitionWorkflow("pending","ready")).toBe("ready"));it("rejects pending to succeeded",()=>expect(()=>transitionWorkflow("pending","succeeded")).toThrow("Invalid workflow transition"));
