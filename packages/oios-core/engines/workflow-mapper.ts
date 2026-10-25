@@ -1,0 +1,1 @@
+import type{Workflow}from"../domain/Workflow";export type Quest={id:string;workflowId:string;state:Workflow["state"];title:string};export function workflowToQuest(w:Workflow):Quest{return{id:`quest:${w.id}`,workflowId:w.id,state:w.state,title:w.name}}
