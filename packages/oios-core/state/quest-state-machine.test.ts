@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{assertQuestWorkflowParity,questToWorkflowState}from"./quest-state-machine";it("maps quest state directly to workflow state",()=>expect(questToWorkflowState("blocked")).toBe("blocked"));it("rejects divergent state",()=>expect(()=>assertQuestWorkflowParity("ready","running")).toThrow("CF07"));
