@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{transitionVerification}from"./verification-state-machine";it("allows check to pass",()=>expect(transitionVerification("checking","passed")).toBe("passed"));it("rejects unchecked pass",()=>expect(()=>transitionVerification("pending","passed")).toThrow("Invalid verification transition"));
