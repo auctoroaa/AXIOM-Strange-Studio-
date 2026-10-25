@@ -17,5 +17,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["apps/web/src", "packages/oios-core", "packages/architecture-engine", "packages/runtime-contracts", "packages/evidence-engine", "packages/architecture-assurance", "vite.config.ts", "apps/web/vite.config.ts"]
+  "include": ["apps/web/src", "packages/oios-core", "packages/architecture-engine", "packages/runtime-contracts", "packages/evidence-engine", "packages/architecture-assurance", "packages/axiom-aaa", "vite.config.ts", "apps/web/vite.config.ts"]
 }
