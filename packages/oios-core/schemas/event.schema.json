@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strange-studio.dev/schemas/event.schema.json",
+  "title": "OIOS Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "occurredAt",
+    "subjectId",
+    "effect",
+    "truth"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "subjectId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "effect": {
+      "type": "object"
+    },
+    "truth": {
+      "$ref": "truth.schema.json"
+    }
+  }
+}
