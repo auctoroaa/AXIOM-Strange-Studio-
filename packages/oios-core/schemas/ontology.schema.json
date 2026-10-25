@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strange-studio.dev/schemas/ontology.schema.json",
+  "title": "OIOS Ontology",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "primitives"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "primitives": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "enum": [
+          "Agent",
+          "Workflow",
+          "Knowledge",
+          "Event",
+          "Tool",
+          "Context",
+          "Verification",
+          "Delivery",
+          "Unknown"
+        ]
+      }
+    }
+  }
+}
