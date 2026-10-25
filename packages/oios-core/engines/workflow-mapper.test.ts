@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{workflowToQuest}from"./workflow-mapper";it("maps quest state exactly",()=>expect(workflowToQuest({id:"w",name:"Migrate",state:"blocked",requiredCapabilities:[],dependencies:[]}).state).toBe("blocked"));
