@@ -1,0 +1,1 @@
+export function progressionFromEvents(events:readonly{type:string;effect:Record<string,unknown>}[]):number{return events.filter(e=>e.type==="VerificationPassed"||(e.type==="WorkflowStateChanged"&&e.effect.to==="succeeded")).length}
