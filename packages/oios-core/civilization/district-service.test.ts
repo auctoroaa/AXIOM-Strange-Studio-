@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{validateDistrictAccess}from"./district-service";it("reports missing resource",()=>expect(validateDistrictAccess({id:"memory",requiredResources:["knowledge"],availableResources:[]})).toEqual(["District memory lacks resource knowledge"]));
