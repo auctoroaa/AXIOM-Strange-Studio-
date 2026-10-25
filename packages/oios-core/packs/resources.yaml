@@ -1,0 +1,12 @@
+version: "1.0.0"
+resources:
+  - id: source-records
+    producer: ingestion-service
+    consumer: knowledge-service
+    storage: durable-source-store
+    transport: authenticated-service-api
+  - id: concept-index
+    producer: concept-extractor
+    consumer: retrieval-service
+    storage: vector-index
+    transport: embedding-and-query-api
