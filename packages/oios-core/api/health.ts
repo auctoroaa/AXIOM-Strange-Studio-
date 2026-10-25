@@ -1,0 +1,1 @@
+export function healthResponse(){return{service:"strange-studio-oios-core",status:"ok",contractVersion:"1.0.0",canonicalPrimitives:["Agent","Workflow","Knowledge","Event","Tool","Context","Verification","Delivery","Unknown"]as const}}
