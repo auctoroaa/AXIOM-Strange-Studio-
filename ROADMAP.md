@@ -23,11 +23,11 @@ Exit gate: repository identity, architecture boundaries, status vocabulary, and 
 ## Phase 1: Ontology schemas
 
 Required files:
-- [ ] `ontology.schema.json`
-- [ ] `workflow.schema.json`
-- [ ] `event.schema.json`
-- [ ] `truth.schema.json`
-- [ ] `agent.schema.json`
+- [x] `ontology.schema.json`
+- [x] `workflow.schema.json`
+- [x] `event.schema.json`
+- [x] `truth.schema.json`
+- [x] `agent.schema.json`
 
 Each schema must include a valid fixture, an invalid fixture, explicit validation rules, versioning, and tests that exercise both accepted and rejected inputs.
 
@@ -36,10 +36,10 @@ Exit gate: all canonical entities are schema-validatable and cross-schema refere
 ## Phase 2: Validators
 
 Required files:
-- [ ] `schema-validator.ts`
-- [ ] `cross-field-validator.ts`
-- [ ] `projection-validator.ts`
-- [ ] `observability-validator.ts`
+- [x] `schema-validator.ts`
+- [x] `cross-field-validator.ts`
+- [x] `projection-validator.ts`
+- [x] `observability-validator.ts`
 
 Each validator requires its own test file, valid and invalid cases, and assertions for exact expected errors. Validators must fail closed for malformed or semantically invalid data.
 
@@ -48,13 +48,13 @@ Exit gate: schema, cross-field, projection, and event observability rules are ex
 ## Phase 3: Domain models
 
 Required files:
-- [ ] `Agent.ts`
-- [ ] `Workflow.ts`
-- [ ] `Event.ts`
-- [ ] `Knowledge.ts`
-- [ ] `Verification.ts`
-- [ ] `Context.ts`
-- [ ] `Unknown.ts`
+- [x] `Agent.ts`
+- [x] `Workflow.ts`
+- [x] `Event.ts`
+- [x] `Knowledge.ts`
+- [x] `Verification.ts`
+- [x] `Context.ts`
+- [x] `Unknown.ts`
 
 Every model must enforce its invariants through typed constructors or validated factory functions and have focused tests. Canonical models must not depend on metaphor or UI packages.
 
@@ -63,61 +63,61 @@ Exit gate: domain objects can be created, serialized, validated, and rejected de
 ## Phase 4: State machines
 
 Required files:
-- [ ] `workflow-state-machine.ts`
-- [ ] `quest-state-machine.ts`
-- [ ] `verification-state-machine.ts`
+- [x] `workflow-state-machine.ts`
+- [x] `quest-state-machine.ts`
+- [x] `verification-state-machine.ts`
 
 Exit gate: allowed transitions are explicit, invalid transitions return typed errors, transition history is observable, and quest/workflow state mappings are deterministic.
 
 ## Phase 5: Workflow engine
 
 Required files:
-- [ ] `orchestrator.ts`
-- [ ] `scheduler.ts`
-- [ ] `dependency-graph.ts`
-- [ ] `workflow-service.ts`
+- [x] `orchestrator.ts`
+- [x] `scheduler.ts`
+- [x] `dependency-graph.ts`
+- [x] `workflow-service.ts`
 
 Exit gate: dependency cycles are detected, scheduling is deterministic under documented rules, failures and cancellations are represented, and each accepted transition emits an observable event.
 
 ## Phase 6: Quest engine
 
 Required files:
-- [ ] `workflow-mapper.ts`
-- [ ] `quest-generator.ts`
-- [ ] `progression-engine.ts`
-- [ ] `rewards-engine.ts`
+- [x] `workflow-mapper.ts`
+- [x] `quest-generator.ts`
+- [x] `progression-engine.ts`
+- [x] `rewards-engine.ts`
 
 Exit gate: quests are projections of workflows, progression derives from verified events, and rewards cannot assert completion when their required verification gate has failed or remains unknown.
 
 ## Phase 7: Civilization engine
 
 Required files:
-- [ ] `district-service.ts`
-- [ ] `building-service.ts`
-- [ ] `railway-service.ts`
-- [ ] `world-state.ts`
+- [x] `district-service.ts`
+- [x] `building-service.ts`
+- [x] `railway-service.ts`
+- [x] `world-state.ts`
 
 Exit gate: districts and buildings remain projection-layer constructs, required resource access is validated, railway routing exposes dependencies and backoff states, and world state derives from canonical events.
 
 ## Phase 8: Projection engine
 
 Required files:
-- [ ] `compiler.ts`
-- [ ] `mapper.ts`
-- [ ] `projector.ts`
-- [ ] `reverse-mapper.ts`
+- [x] `compiler.ts`
+- [x] `mapper.ts`
+- [x] `projector.ts`
+- [x] `reverse-mapper.ts`
 
 Exit gate: mappings preserve canonical identity, unsupported or lossy mappings are rejected or explicitly reported, and round-trip tests demonstrate reversibility for supported projections.
 
 ## Phase 9: Architecture Packs
 
 Required files:
-- [ ] `architecture.yaml`
-- [ ] `districts.yaml`
-- [ ] `resources.yaml`
-- [ ] `quests.yaml`
-- [ ] `validation.yaml`
-- [ ] `examples.yaml`
+- [x] `architecture.yaml`
+- [x] `districts.yaml`
+- [x] `resources.yaml`
+- [x] `quests.yaml`
+- [x] `validation.yaml`
+- [x] `examples.yaml`
 
 Every pack must map Agent, Workflow, Knowledge, Tool, Event, Verification, Context, Unknown, and Delivery. Packs must include teaching intent, source/proposal/unresolved classifications, and executable validation examples.
 
@@ -125,13 +125,15 @@ Exit gate: invalid packs are rejected before compilation or use.
 
 ## Phase 10: API
 
-API endpoints may be implemented only after the domain models, validators, state machines, and required engines exist.
+- [x] Implemented a schema-validated local HTTP API for health and workflow CRUD basics after the core layers were added.
+
+API verification remains pending CI.
 
 Exit gate: request and response schemas are validated, errors are typed, state changes produce observable events, and API tests cover success, rejection, authorization, and failure paths.
 
 ## Phase 11: UI
 
-UI work begins only after state, services, APIs, and projections are implemented and tested. The UI may visualize canonical state and projections but may not invent state or promote unknown values to success.
+The pre-existing UI prototype is retained and has not been integrated with the new API. UI integration remains gated on successful core verification.
 
 Exit gate: UI behavior is backed by tested contracts, empty/error/unknown states are explicit, and integration tests verify observable behavior.
 
@@ -141,4 +143,4 @@ Start Phase 1 by inspecting the existing repository schemas, TypeScript configur
 
 ## Verification ledger
 
-No phase is marked **verified** solely because files were committed. Record the exact test command, outcome, commit or run reference, and any remaining limitations before changing a phase to verified.
+Implementation files and focused tests have been committed for Phases 1–10. The current GitHub Actions run must pass type-checking, tests, and production build before the core can be marked **verified**. Phase 11 remains incomplete because the existing UI is not yet wired to the API. The API is process-memory-only and is not production-hardened. No phase is marked verified solely because files were committed.
