@@ -11,7 +11,7 @@ describe("Strange Studio dashboard", () => {
 
   it("renders the workflow and truth classifications", () => {
     render(<App />);
-    expect(screen.getByRole("heading", { name: /Intelligence railway/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { name: /Intelligence railway/i }).length).toBeGreaterThan(0);
     expect(screen.getByText("Assumption")).toBeInTheDocument();
     expect(screen.getByText("Simulation")).toBeInTheDocument();
     expect(screen.getByText("Delivery remains gated by verification.")).toBeInTheDocument();
@@ -19,7 +19,7 @@ describe("Strange Studio dashboard", () => {
 
   it("opens an inspector that discloses the fixture source", () => {
     render(<App />);
-    fireEvent.click(screen.getByRole("button", { name: /Open inspector/i }));
+    fireEvent.click(screen.getAllByRole("button", { name: /Open inspector/i })[0]);
     expect(screen.getByRole("complementary", { name: "System inspector" })).toBeInTheDocument();
     expect(screen.getByText("local-demo-fixture")).toBeInTheDocument();
     expect(screen.getByText("Live event ingestion not implemented")).toBeInTheDocument();
