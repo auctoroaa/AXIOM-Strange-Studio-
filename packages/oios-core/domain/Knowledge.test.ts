@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{createKnowledge}from"./Knowledge";it("preserves source provenance",()=>expect(createKnowledge({id:"k",content:"Concept",source:"doc:1",truth:"source-defined",relations:[]}).source).toBe("doc:1"));it("rejects missing provenance",()=>expect(()=>createKnowledge({id:"k",content:"x",source:"",truth:"unknown",relations:[]})).toThrow("provenance"));
