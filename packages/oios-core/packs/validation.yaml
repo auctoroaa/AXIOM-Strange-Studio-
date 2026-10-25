@@ -1,0 +1,5 @@
+version: "1.0.0"
+required_primitives: [Agent, Workflow, Knowledge, Tool, Event, Verification, Context, Unknown, Delivery]
+checks: [CF01, CF02, CF03, CF04, CF05, CF06, CF07, CF08, CF09, CF10, CF11, CF12]
+projection_policy: reject-lossy-mappings
+truth_classes: [source-defined, proposed, implemented, verified, unresolved, unknown]
