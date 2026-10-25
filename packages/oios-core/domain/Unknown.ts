@@ -1,0 +1,1 @@
+export type Unknown=Readonly<{id:string;question:string;scope:string;discoveryMethod:string;status:"open"|"investigating"|"resolved"|"blocked"}>;export function createUnknown(u:Unknown):Unknown{if(!u.id.trim()||!u.question.trim()||!u.scope.trim()||!u.discoveryMethod.trim())throw new Error("Unknown requires question, scope and discovery method");return Object.freeze({...u});}
