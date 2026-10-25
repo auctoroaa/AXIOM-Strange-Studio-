@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{createWorkflow}from"./Workflow";it("creates workflow",()=>expect(createWorkflow({id:"w",name:"Index",state:"pending",requiredCapabilities:[],dependencies:[]}).state).toBe("pending"));it("rejects self dependency",()=>expect(()=>createWorkflow({id:"w",name:"Index",state:"pending",requiredCapabilities:[],dependencies:["w"]})).toThrow("itself"));
