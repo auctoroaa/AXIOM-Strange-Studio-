@@ -1,17 +1,24 @@
 PROPRIETARY LICENSE AND ALL RIGHTS RESERVED
 
-Copyright (c) 2026 Strange Studio project rights holder.
+Copyright (c) 2026 [INDIVIDUAL RIGHTS HOLDER: INSERT LEGAL NAME].
 All rights reserved.
+
+Rights-holder identity note: the project owner has stated that Strange Studio is
+intended to be owned personally by an individual. The legal name has not been
+provided in this repository workflow. Replace the bracketed placeholder with
+the rights holder's correct legal name before treating this notice as finalized.
 
 Unless the rights holder gives prior written permission, no license is granted to
 use, copy, modify, merge, publish, distribute, sublicense, sell, or create
-derivative works from this repository or its original contents, except that a
-person may view the publicly accessible repository for evaluation purposes.
+derivative works from project-owned material in this repository, except that
+people may view and fork the public repository as permitted by GitHub's Terms of
+Service and applicable law.
 
 This notice does not claim ownership over third-party software, dependencies,
-open standards, public-domain material, or other content not owned by the
-Strange Studio project rights holder. Those materials remain subject to their
-respective licenses and rights.
+open standards, public-domain material, contributions made by others, or other
+content not owned by the rights holder. Those materials remain subject to their
+respective licenses and rights. Rights in contributions may require separate
+permission or agreements.
 
 No rights are granted to use any project name, logo, brand, or mark as a
 trademark, endorsement, or affiliation claim.
@@ -23,10 +30,10 @@ NONINFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE RIGHTS
 HOLDER SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
 FROM THE SOFTWARE OR ITS USE.
 
-This notice is a repository-level statement of intended terms, not a substitute
-for jurisdiction-specific legal advice. Mandatory rights under applicable law
-are not excluded where they cannot lawfully be excluded.
+This notice states intended repository terms; it is not jurisdiction-specific
+legal advice and does not guarantee enforceability. Mandatory rights under
+applicable law are not excluded where they cannot lawfully be excluded.
 
-For permissions or licensing inquiries, open a repository issue or contact the
-rights holder through an independently verified channel. Do not assume that
-public availability grants permission to reuse the code.
+For permissions or licensing inquiries, contact the rights holder through an
+independently verified channel. Do not assume that public availability grants
+permission to reuse project-owned code or documentation.
