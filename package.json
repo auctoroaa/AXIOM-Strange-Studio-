@@ -11,7 +11,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "preview": "vite preview --host 0.0.0.0",
-    "test:oios": "vitest run packages/oios-core"
+    "test:oios": "vitest run packages/oios-core",
+    "api:dev": "tsx packages/oios-core/api/server.ts",
+    "api:start": "tsx packages/oios-core/api/server.ts"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
@@ -20,7 +22,8 @@
     "react-dom": "^18.3.1",
     "vite": "^6.0.7",
     "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1"
+    "ajv-formats": "^3.0.1",
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
@@ -29,6 +32,10 @@
     "@types/react-dom": "^18.3.1",
     "jsdom": "^25.0.1",
     "typescript": "~5.7.2",
-    "vitest": "^2.1.8"
+    "vitest": "^2.1.8",
+    "@types/express": "^5.0.0",
+    "supertest": "^7.0.0",
+    "@types/supertest": "^6.0.2",
+    "tsx": "^4.19.2"
   }
 }
