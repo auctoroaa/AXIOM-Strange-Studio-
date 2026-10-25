@@ -1,0 +1,1 @@
+import type{Workflow}from"../domain/Workflow";export function scheduleReady(w:readonly Workflow[],completed:ReadonlySet<string>):Workflow[]{return w.filter(x=>(x.state==="pending"||x.state==="ready")&&x.dependencies.every(d=>completed.has(d))).slice().sort((a,b)=>a.id.localeCompare(b.id));}
