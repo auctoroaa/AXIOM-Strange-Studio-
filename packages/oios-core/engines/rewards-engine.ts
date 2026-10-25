@@ -1,0 +1,1 @@
+export function calculateReward(i:{requiredVerificationPassed:boolean;progress:number;pointsPerStep:number}):number{if(!i.requiredVerificationPassed)return 0;if(!Number.isInteger(i.progress)||i.progress<0||!Number.isFinite(i.pointsPerStep)||i.pointsPerStep<0)throw new Error("Progress and reward rate must be non-negative");return i.progress*i.pointsPerStep}
