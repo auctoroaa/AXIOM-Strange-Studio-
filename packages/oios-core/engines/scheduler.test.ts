@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{scheduleReady}from"./scheduler";const w=(id:string,dependencies:string[]=[])=>({id,name:id,state:"pending"as const,requiredCapabilities:[],dependencies});it("schedules dependency-ready workflows deterministically",()=>expect(scheduleReady([w("b",["a"]),w("a")],new Set()).map(x=>x.id)).toEqual(["a"]));
