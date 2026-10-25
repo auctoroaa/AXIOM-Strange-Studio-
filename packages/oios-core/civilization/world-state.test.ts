@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{applyWorldEvent}from"./world-state";it("applies observable event",()=>expect(applyWorldEvent({revision:0,districts:{},lastEventId:null},{id:"e",type:"DistrictStateChanged",effect:{districtId:"d",status:"healthy"}}).districts.d.status).toBe("healthy"));
