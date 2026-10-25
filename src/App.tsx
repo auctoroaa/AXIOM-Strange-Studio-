@@ -1,4 +1,5 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { loadOiosWorkflows, type OiosApiState } from "./api/oios-client";
 import {
   Activity, AlertTriangle, ArrowDownRight, ArrowRight, ArrowUpRight,
   BookOpen, Box, BrainCircuit, CheckCircle2, ChevronDown, CircleDot,
@@ -26,6 +27,13 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState(demoEvents[0].id);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
+  const [runtime, setRuntime] = useState<OiosApiState>({ connected: false, workflows: [], message: "Checking OIOS API connection…" });
+
+  useEffect(() => {
+    let active = true;
+    void loadOiosWorkflows().then((state) => { if (active) setRuntime(state); });
+    return () => { active = false; };
+  }, []);
   const selected = demoEvents.find((event) => event.id === selectedEvent) ?? demoEvents[0];
 
   return (
@@ -76,6 +84,12 @@ function App() {
 
           <section className="demo-notice" aria-label="Prototype status">
             <div className="notice-icon"><AlertTriangle size={16} /></div><div><strong>Prototype environment</strong><span>All activity shown is local demonstration data. Live providers, agents, and infrastructure are not connected.</span></div><span className="notice-tag">NOT LIVE</span>
+          </section>
+
+          <section className={`runtime-connection ${runtime.connected ? "runtime-connected" : "runtime-offline"}`} aria-live="polite" aria-label="OIOS runtime connection">
+            <div className="runtime-status-dot" />
+            <div className="runtime-copy"><strong>{runtime.connected ? "OIOS runtime connected" : "OIOS runtime not connected"}</strong><span>{runtime.message}</span></div>
+            <div className="runtime-count"><strong>{runtime.workflows.length.toString().padStart(2, "0")}</strong><span>API workflows</span></div>
           </section>
 
           <section className="metrics-grid" aria-label="System summary">
