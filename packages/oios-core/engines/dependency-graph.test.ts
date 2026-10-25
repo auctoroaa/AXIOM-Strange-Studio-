@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{topologicalOrder}from"./dependency-graph";it("orders dependencies first",()=>{const o=topologicalOrder(new Map([["b",["a"]],["a",[]]]));expect(o.indexOf("a")).toBeLessThan(o.indexOf("b"))});it("detects cycles",()=>expect(()=>topologicalOrder(new Map([["a",["b"]],["b",["a"]]])).toString()).toThrow("cycle"));
