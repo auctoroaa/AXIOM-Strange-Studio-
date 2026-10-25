@@ -1,0 +1,5 @@
+version: "1.0.0"
+state_mapping: identity
+states: [pending, ready, running, blocked, succeeded, failed, cancelled]
+progression_source: verified-events
+reward_gate: required-verification-passed
