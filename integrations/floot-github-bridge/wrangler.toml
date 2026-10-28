@@ -1,0 +1,8 @@
+name = "floot-github-bridge"
+main = "src/index.js"
+compatibility_date = "2026-10-28"
+
+[vars]
+GITHUB_OWNER = "auctoroaa"
+GITHUB_REPO = "AXIOM-Strange-Studio-"
+# Set FLOOT_WEBHOOK_SECRET and GITHUB_TOKEN with `wrangler secret put`.
