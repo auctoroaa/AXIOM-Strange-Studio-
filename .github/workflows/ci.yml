@@ -23,6 +23,10 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
+      - name: Test Floot-GitHub bridge
+        run: npm --prefix integrations/floot-github-bridge test
+      - name: Check Floot-GitHub bridge syntax
+        run: npm --prefix integrations/floot-github-bridge run check
       - name: Type-check
         run: npm run typecheck
       - name: Run tests

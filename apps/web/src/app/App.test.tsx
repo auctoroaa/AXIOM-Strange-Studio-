@@ -12,9 +12,9 @@ describe("Strange Studio dashboard", () => {
   it("renders the workflow and truth classifications", () => {
     render(<App />);
     expect(screen.getAllByRole("heading", { name: /Intelligence railway/i }).length).toBeGreaterThan(0);
-    expect(screen.getByText("Assumption")).toBeInTheDocument();
-    expect(screen.getByText("Simulation")).toBeInTheDocument();
-    expect(screen.getByText("Delivery remains gated by verification.")).toBeInTheDocument();
+    expect(screen.getAllByText("Assumption").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Simulation").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Delivery remains gated by verification.").length).toBeGreaterThan(0);
   });
 
   it("opens an inspector that discloses the fixture source", () => {
