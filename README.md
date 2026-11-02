@@ -116,4 +116,9 @@ This repository currently uses a proprietary, all-rights-reserved notice. Public
 - [Name and Trademark Notice](docs/legal/TRADEMARKS.md)
 - [Third-Party Notices and Audit Status](docs/legal/THIRD_PARTY_NOTICES.md)
 
-Third-party components retain their own terms. The dependency-license audit is not yet complete. These notices are not a substitute for advice from qualified counsel in the relevant jurisdiction.
+Third-party components retain their own terms. The dependency-license audit is not yet complete. These notices are not a substitute for advice from qualified counsel in the relevant 
+jurisdiction.
+
+FOUNDER'S STATEMENT
+
+The AXIOM is the "Ground Truth." It is the baseline from which we measure all future progress. By admitting that "Code being present is not proof that tests or CI pass," you have eliminated the possibility of being "framed" by your own progress
