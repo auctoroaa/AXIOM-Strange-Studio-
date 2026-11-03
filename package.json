@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "description": "Strange Studio OIOS with canonical domain and projection core",
   "type": "module",
-  "workspaces": ["apps/web"],
+  "workspaces": ["apps/web", "apps/telegram-bot"],
   "scripts": {
     "dev": "vite --config apps/web/vite.config.ts",
     "build": "tsc -b && vite build --config apps/web/vite.config.ts",
@@ -15,7 +15,9 @@
     "preview": "vite preview --config apps/web/vite.config.ts --host 0.0.0.0",
     "test:oios": "vitest run packages/oios-core",
     "api:dev": "tsx packages/oios-core/api/start.ts",
-    "api:start": "tsx packages/oios-core/api/start.ts"
+    "api:start": "tsx packages/oios-core/api/start.ts",
+    "bot:dev": "npm --prefix apps/telegram-bot run dev",
+    "bot:start": "npm --prefix apps/telegram-bot start"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
