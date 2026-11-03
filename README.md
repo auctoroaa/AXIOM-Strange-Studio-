@@ -94,6 +94,7 @@ npm run build
 CI is configured to run these checks on pushes and pull requests. A configured workflow is not evidence of a passing run.
 
 ## Architecture and product corpus
+- [Repository Governance and Canonical Ownership](docs/architecture/REPOSITORY_GOVERNANCE.md)
 
 - [Strange Studio Bible](bible/strange-studio-bible-v1.md)
 - [OIOS Core README](packages/oios-core/README.md)
