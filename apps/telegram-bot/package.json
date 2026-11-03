@@ -1,0 +1,14 @@
+{
+  "name": "@axiom-strange-studio/telegram-bot",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env --watch src/index.js",
+    "start": "node --env-file-if-exists=.env src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "grammy": "^1.35.0"
+  }
+}

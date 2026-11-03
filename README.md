@@ -95,6 +95,7 @@ CI is configured to run these checks on pushes and pull requests. A configured w
 
 ## Architecture and product corpus
 - [Repository Governance and Canonical Ownership](docs/architecture/REPOSITORY_GOVERNANCE.md)
+- [Telegram Resilience and Execution Governance](docs/architecture/TELEGRAM_RESILIENCE_AND_GOVERNANCE.md)
 
 - [Strange Studio Bible](bible/strange-studio-bible-v1.md)
 - [OIOS Core README](packages/oios-core/README.md)
